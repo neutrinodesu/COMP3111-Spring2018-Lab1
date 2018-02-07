@@ -13,7 +13,30 @@ public class Lab1Activity {
 			i++;
 		}
 		
+		int min = findMin(arr, 10);
+		int max = findMax(arr, 10);
+
 		System.out.println(String.format("Sum of the numbers is %d", sum));
+		System.out.println("Min = " + min + "; Max = " + max);
 		
 	}
+	
+	public static int findMin(int[] array, int n) {
+		int min = array[0];
+		for (int i = 0; i < n - 1; i++) {
+			if (min > array[i + 1])
+				min = array[i + 1];
+		}
+		return min;
+	}
+	
+	public static int findMax(int[] array, int n) {
+		int max = array[0];
+		for (int i = 0; i < n - 1; i++) {
+			if (max < array[i + 1])
+				max = array[i + 1];
+		}
+		return max;
+	}
+
 }
